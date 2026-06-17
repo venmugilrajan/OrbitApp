@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.launchhub.ui.controller.MainController"
+            prefHeight="720.0" prefWidth="1080.0">
+    
+    <!-- Navigation Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" spacing="15.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="30.0" right="15.0" bottom="30.0" left="15.0"/>
+            </padding>
+            
+            <Label text="🚀 OrbitApps" styleClass="sidebar-brand"/>
+            
+            <VBox spacing="8.0" VBox.vgrow="ALWAYS">
+                <ToggleButton fx:id="btnDashboard" text="Dashboard" styleClass="sidebar-nav-btn" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                <ToggleButton fx:id="btnFavorites" text="Favorites" styleClass="sidebar-nav-btn" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                <ToggleButton fx:id="btnCategories" text="Categories" styleClass="sidebar-nav-btn" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                <ToggleButton fx:id="btnStatistics" text="Statistics" styleClass="sidebar-nav-btn" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                <ToggleButton fx:id="btnSettings" text="Settings" styleClass="sidebar-nav-btn" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <!-- Main Dynamic Content Container -->
+    <center>
+        <BorderPane fx:id="contentArea" styleClass="content-area" BorderPane.alignment="CENTER"/>
+    </center>
+</BorderPane>

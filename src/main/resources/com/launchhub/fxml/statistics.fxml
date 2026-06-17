@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.launchhub.ui.controller.StatisticsController"
+            fitToWidth="true" fitToHeight="true" styleClass="scroll-pane" hbarPolicy="NEVER">
+    
+    <VBox spacing="30.0">
+        <padding>
+            <Insets bottom="30.0" />
+        </padding>
+
+        <Label text="Statistics &amp; CleanUp" styleClass="page-title" />
+
+        <!-- Metric Grid -->
+        <GridPane fx:id="metricsGrid" hgap="20.0" vgap="20.0" />
+
+        <HBox spacing="30.0" VBox.vgrow="ALWAYS">
+            <!-- Most Used Applications -->
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" prefWidth="350.0">
+                <Label text="Most Popular Apps" styleClass="page-title" style="-fx-font-size: 18px;" />
+                <TableView fx:id="popularAppsTable" VBox.vgrow="ALWAYS" styleClass="dialog-container">
+                    <columns>
+                        <TableColumn fx:id="colPopName" text="Application" prefWidth="180.0" />
+                        <TableColumn fx:id="colPopLaunches" text="Launches" prefWidth="90.0" />
+                        <TableColumn fx:id="colPopLastUsed" text="Last Launched" prefWidth="120.0" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Unused Apps / Suggestions -->
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" prefWidth="350.0">
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <Label text="Unused Software Analyzer" styleClass="page-title" style="-fx-font-size: 18px;" />
+                    <ComboBox fx:id="comboDays" prefWidth="120.0" styleClass="dialog-container" />
+                </HBox>
+                <TableView fx:id="unusedAppsTable" VBox.vgrow="ALWAYS" styleClass="dialog-container">
+                    <columns>
+                        <TableColumn fx:id="colUnusedName" text="Application" prefWidth="180.0" />
+                        <TableColumn fx:id="colUnusedSize" text="Size" prefWidth="90.0" />
+                        <TableColumn fx:id="colUnusedLastUsed" text="Last Opened" prefWidth="120.0" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

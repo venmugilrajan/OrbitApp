@@ -1,0 +1,33 @@
+# Maven compilation output
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.nextVal
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+.metadata/
+
+# Visual Studio Code project files
+.vscode/
+
+# Custom application distributions, binaries and local caches
+dist/
+apache-maven-*/
+*.log
+.launchhub/
+bin/
